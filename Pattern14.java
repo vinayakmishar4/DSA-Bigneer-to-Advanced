@@ -1,4 +1,5 @@
 // WAP to Increasing Letter Triangle Pattern
+import java.util.Scanner;
 class Pattern14
 {
   public static void main(String[] args)
