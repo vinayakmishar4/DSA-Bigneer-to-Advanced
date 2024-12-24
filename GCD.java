@@ -16,6 +16,7 @@ class LCM
     int number1=sc.nextlnt();
     System.out.println("Enter the second number");
     int number2=sc.nextlnt();
-    System.out.print("GCD of " + number1 + "and" + number2+ " = " + GCD(a,b))
+    int result=GCD(a,b);
+    System.out.print("GCD of " + number1 + "and" + number2+ " = " + result)
   }
 }
