@@ -14,7 +14,7 @@ class Pattern16
        char c= (char)('A'+i);
       for(int j=0;j<=i;j++)
       {
-          System.out.print(ch);
+          System.out.print(c);
       }
       System.out.println();
     }

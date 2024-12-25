@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 class Pattern15
 {
-  public static void main(Stringp[] args)
+  public static void main(String[] args)
   {
     Scanner sc=new Scanner(System.in);
     System.out.println("Enter number");
@@ -11,7 +11,7 @@ class Pattern15
     System.out.println("Reverse Letter Triangle Pattern");
     for(int i=0;i<a;i++)
     {
-      for(char ch = 'A'; ch<='A'+(N-i-1);ch++)
+      for(char ch = 'A'; ch<='A'+(a-i-1);ch++)
       {
           System.out.println(ch);
       }
