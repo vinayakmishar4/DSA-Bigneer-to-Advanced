@@ -1,22 +1,25 @@
 // WAP to find GCD(Greatest common divison ) of two numbers
-class LCM
+
+import java.util.Scanner;
+
+class GCD
 {
-  static int GCD(int a,int b)
+  static int GCD(int number1,int number2)
   {
-    if(b==0)
+    if(number2==0)
     {
-     return b;
+     return number1;
     }
-    return GCD(b,a%b);
+    return GCD(number2,number1%number2);
   }
   public static void main(String []args)
   {
     Scanner sc=new Scanner(System.in);
     System.out.println("Enter the frist number");
-    int number1=sc.nextlnt();
+    int number1=sc.nextInt();
     System.out.println("Enter the second number");
-    int number2=sc.nextlnt();
-    int result=GCD(a,b);
-    System.out.print("GCD of " + number1 + "and" + number2+ " = " + result)
+    int number2=sc.nextInt();
+    int result=GCD(number1,number2);
+    System.out.print(" GCD of " + number1 + " and " + number2 + " = " + result);
   }
 }
