@@ -52,9 +52,11 @@ class Prime
     switch(n)
     {
       case 1:System.out.prinhtln("Brute approach");
-              break;
+             Brute(num);            
+             break;
       case 2:System.out.println("Optimal approach");
-              break;
+             Optimal(num); 
+             break;
       default:System.out.println("Worng Approach");
               break;
     }
