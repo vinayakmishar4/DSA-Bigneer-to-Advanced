@@ -1,3 +1,4 @@
+// Wap to the n to 1 
 package Recursion;
 
 import java.util.Scanner;
