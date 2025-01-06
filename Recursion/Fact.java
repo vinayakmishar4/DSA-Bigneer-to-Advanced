@@ -1,3 +1,4 @@
+// Wap to factorial of a number
 package Recursion;
 
 import java.util.Scanner;
