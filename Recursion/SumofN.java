@@ -1,3 +1,4 @@
+// Wap to sum of n number ̑
 package Recursion;
 
 import java.util.Scanner;
