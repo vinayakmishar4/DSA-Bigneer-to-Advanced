@@ -36,5 +36,13 @@ class SubSequences
        System.out.print(arr[i] + " ");   
      }
      SubSeq(arr,0,sub);
+     System.out.println("Enter the size of Second array");
+     int size1=Sc.nextlnt();
+     int arr1[]=new int[size1];
+     System.out.println("Enter the elements of the array")
+     for(int i=0;i<size1;i++)
+     { 
+       arr[i]=Sc.nextInt();  
+     } 
     }
 }
