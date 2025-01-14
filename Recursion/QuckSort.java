@@ -1,3 +1,4 @@
+// WAP to sort an array using qucik sort algorithm
 package Recursion;
 
 import java.util.Scanner;
