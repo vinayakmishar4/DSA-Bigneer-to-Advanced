@@ -1,3 +1,4 @@
+// WAP to sort an array using merge sorting algorithm
 package Recursion;
 
 import java.util.ArrayList;
