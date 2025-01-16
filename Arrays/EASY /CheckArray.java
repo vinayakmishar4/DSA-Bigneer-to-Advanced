@@ -1,6 +1,5 @@
 
 // WAP to check wethier array is sorted or not
-package Arrays.MEDIUM;
 import java.util.Scanner;
 
 class CheckArray
