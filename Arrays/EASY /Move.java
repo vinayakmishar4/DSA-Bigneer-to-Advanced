@@ -30,7 +30,7 @@ class Move
         {
               nums[i] = 0;
         }
-    }
+    }  
   public static void main(String []args)
   {
     
