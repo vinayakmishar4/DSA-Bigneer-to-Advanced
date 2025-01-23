@@ -1,12 +1,14 @@
 // WAP to move all zero to the end
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
 class Move
 {
     public void moveZeroes(int[] nums)
     {
       ArrayList<Integer> temp = new ArrayList<>();
          int n=nums.length;       
-        //copy non-zero elements
-        //from original -> temp array:
         for (int i = 0; i < n; i++) 
          {
             if (nums[i] != 0)
@@ -14,18 +16,10 @@ class Move
               temp.add(nums[i]);
             }
         }
-
-        // number of non-zero elements.
         int nz = temp.size();
-
-        //copy elements from temp
-        //fill first nz fields of
-        //original array:
         for (int i = 0; i < nz; i++) {
             nums[i] = temp.get(i);
         }
-
-        //fill rest of the cells with 0:
         for (int i = nz; i < n; i++)
         {
               nums[i] = 0;
@@ -33,6 +27,22 @@ class Move
     }  
   public static void main(String []args)
   {
-    
+    Scanner scanner = new Scanner(System.in);
+    System.out.println("Enter the size of the array");
+    int n = scanner.nextInt();
+    System.out.println("Enter the elements of the array");
+    int[] nums = new int[n];
+    for(int i=0; i<n; i++)
+    {
+      nums[i] = scanner.nextInt();
+    }
+    Move move = new Move();
+    move.moveZeroes(nums);
+    System.out.println("Array after moving zeroes to the end:");
+    for(int i=0; i<n; i++)
+    {
+      System.out.print(nums[i] + " ");
+    }
+
   }
 }
