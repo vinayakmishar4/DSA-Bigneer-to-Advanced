@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 class Move
 {
-    public void moveZeroes(int[] nums)
+      public void moveZeroes(int[] nums)
     {
       ArrayList<Integer> temp = new ArrayList<>();
          int n=nums.length;       
