@@ -1,3 +1,7 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
 class Pascal
 {
   public List<List<Integer>> generate(int numRows)
@@ -22,4 +26,34 @@ class Pascal
         
         return triangle;      
   }
+
+  public static void main(String[] args)
+  {
+    Scanner scanner = new Scanner(System.in);
+    System.out.println("Enter the number of rows");
+    int numRows = scanner.nextInt();
+    Pascal pascal = new Pascal();
+    List<List<Integer>> triangle = pascal.generate(numRows);
+
+    for (List<Integer> row : triangle) {
+        for (int val : row) {
+            System.out.print(val + " ");
+        }
+        System.out.println();
+  
+        // Add a space after each row to separate them
+        System.out.println();
+  
+        // Add a line break after each set of rows
+        System.out.println();
+  
+        // Add a blank line after each set of rows
+        System.out.println();
+  
+        // Add a horizontal rule after each set of rows
+        System.out.println("---------------------");
+        System.out.println();
+        
+  }
+ }
 }
