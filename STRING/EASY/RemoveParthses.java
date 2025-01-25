@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 class RemoveParthses
 {
     public String removeOuterParentheses(String s)
@@ -24,5 +26,14 @@ class RemoveParthses
         }
       }
       return sc.toString();
+    }
+    public static void main(String[] args)
+    {
+      Scanner sc = new Scanner(System.in);
+      System.out.println("Enter a string:");
+      String s = sc.nextLine();
+      RemoveParthses obj = new RemoveParthses();
+      String result = obj.removeOuterParentheses(s);
+      System.out.println("The string after removing outer parentheses is: " + result);
     }
 }
