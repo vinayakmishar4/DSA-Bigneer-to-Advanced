@@ -1,3 +1,7 @@
+
+import java.util.LinkedList;
+import java.util.Scanner;
+
 // WAP to create the program for array to linked list
 class Arraytoll
 {
@@ -12,13 +16,38 @@ class Arraytoll
          mover = temp;
       }
       return head;
+   }
+   public static void Second1(int arr[])
+   {
+     LinkedList<Integer> Array=new LinkedList<>();
+     for(int i=0; i<arr.length; i++)
+     {
+     Array.add(arr[i]);
+     }
+     System.out.println("Elements of the linked list: ");
+     System.out.println(Array.get(0)); 
    }  
    public static void main(String[] args)
    {
-     int arr[] = {1, 2, 3, 4, 5};
+     Scanner scanner = new Scanner(System.in);
+     System.out.println("Enter the size of an array");
+     int size = scanner.nextInt();
+     int arr[] = new int[size];
+     System.out.println("Enter the elements of the array");
+     for (int i = 0; i < size; i++)
+     {
+       arr[i] = scanner.nextInt();
+     }
+     System.out.println("Elements of the array: ");
+     for (int i = 0; i < arr.length; i++)
+     {
+       System.out.println(arr[i] + " ");
+     }
      node element =Frsit1(arr);
      System.out.println("First element of the linked list: " + element.data);
-   }    
+     System.out.println("Using collection in java");
+     Second1(arr);
+    }    
 }
 class node
 {
