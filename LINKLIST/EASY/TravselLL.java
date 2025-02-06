@@ -13,10 +13,6 @@ class TravselLL
       }
       return head;
    }
-   public static void Travel()
-   {
-     
-   }
    public static void main(String[] args)
    {
      int arr[] = {1, 2, 3, 4, 5};
