@@ -15,21 +15,21 @@ class TravselLL
    }
    public static void Travel()
    {
-     node temp=head;
-     while(temp)
-     {
-       System.out.println(temp.data + " ");
-       temp=temp.next;
-     }
+     
    }
    public static void main(String[] args)
    {
      int arr[] = {1, 2, 3, 4, 5};
      node element =Frsit1(arr);
      System.out.println("First element of the linked list: " + element.data);
-     node travel=Travel();
-     System.out.println("First element of the linked list: " + travel.data);
-   }    
+     System.out.println("Elements of the list: ");
+       node temp=element;
+     while(temp != null)
+     {
+       System.out.println(temp.data + " ");
+       temp=temp.next;
+     }
+    }    
 }
 class node
 {
