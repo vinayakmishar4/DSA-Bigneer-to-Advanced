@@ -44,10 +44,21 @@ class Arraytoll
        System.out.println(arr[i] + " ");
      }
      node element =Frsit1(arr);
-     System.out.println("First element of the linked list: " + element.data);
-     System.out.println("Using collection in java");
-     Second1(arr);
-    }    
+     System.out.println("Select your option");
+     System.out.println("1.USING THE COLLECTION IN JAVA");
+     System.out.println("2. Using the node ");
+     int n=scanner.nextInt();
+     switch(n)
+     {
+       case 1: System.out.println("Using collection in java");
+               Second1(arr);
+               break;
+       case 2: System.out.println("First element of the linked list: " + element.data);
+               break;
+       default:System.out.println("Invalid option");
+               break;
+     }
+    }
 }
 class node
 {
