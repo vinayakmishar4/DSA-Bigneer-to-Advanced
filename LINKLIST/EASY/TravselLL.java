@@ -1,3 +1,7 @@
+
+import java.util.LinkedList;
+import java.util.Scanner;
+
 // WAP to travseal of the element in LL
 class TravselLL
 {
@@ -13,19 +17,52 @@ class TravselLL
       }
       return head;
    }
+   public static void Second1(int arr[])
+   {
+     LinkedList<Integer> sc = new LinkedList<Integer>();
+     for(int i=0; i<arr.length; i++)
+     {
+       sc.add(arr[i]);
+     }
+     for(int i=0; i<sc.size(); i++)
+     {
+       System.out.print(sc.get(i) + " ");
+     }
+   }
    public static void main(String[] args)
    {
-     int arr[] = {1, 2, 3, 4, 5};
+     Scanner scanner = new Scanner(System.in);
+     System.out.println("Enter the size of the array");
+     int size = scanner.nextInt();
+     int arr[] = new int[size];
+     System.out.println("Enter the elements of the array");
+     for (int i = 0; i < size; i++)
+     {
+       arr[i] = scanner.nextInt();
+     }
      node element =Frsit1(arr);
      System.out.println("First element of the linked list: " + element.data);
-     System.out.println("Elements of the list: ");
-       node temp=element;
-     while(temp != null)
+     
+     System.out.println("Enter the Option");
+     System.out.println("1.Using Collections");
+     System.out.println("2.Using node");
+     int n=scanner.nextInt();
+     switch(n)
      {
-       System.out.println(temp.data + " ");
-       temp=temp.next;
+       case 1:Second1(arr);
+              break;
+       case 2:System.out.println("Elements of the list: ");
+                node temp=element;
+                while(temp != null)
+                {
+                  System.out.print(temp.data + " ");
+                  temp=temp.next;
+                }
+                break;
+        default:System.out.println("Invalid option");
+                break;
      }
-    }    
+   }    
 }
 class node
 {
