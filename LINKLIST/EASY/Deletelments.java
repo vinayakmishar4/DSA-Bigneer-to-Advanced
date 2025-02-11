@@ -1,208 +1,254 @@
 import java.util.LinkedList;
 import java.util.Scanner;
 
-class DeleteElements 
+class Deletelments
 {
-    public static void main(String[] args) 
+   
+   public static void main(String[] args)
+   {
+     Scanner scanner = new Scanner(System.in);
+     System.out.println("Enter the size of an array");
+     int size = scanner.nextInt();
+     int arr[] = new int[size];
+     System.out.println("Enter the elements of the array");
+     for (int i = 0; i < size; i++)
+     {
+       arr[i] = scanner.nextInt();
+     }
+     LinkedList<Integer> Array=UsingList.Second1(arr);
+     node head=node.Frsit1(arr);
+     System.out.println("Select the option");
+     System.out.println("1. USING THE COLLECTION IN JAVA");
+     System.out.println("2. Using the node ");
+     int n=scanner.nextInt();
+     switch(n)
+     {
+         case 1:System.out.println("Using the collection in java");
+                System.out.println("1.Frist element of List");
+                System.out.println("2.Last element");
+                System.out.println("3.Given Postion");
+                System.out.println("4.Given value");
+                int choice=scanner.nextInt();
+                switch(choice)
+                {
+                    case 1:System.out.println("Frist element of list is removed");
+                           UsingList.deleteFirst(Array);
+                           break;
+                    case 2:System.out.println("Last element of list is removed");
+                           UsingList.deleteLast(Array);
+                           break;
+                    case 3:System.out.println("Enter the position");
+                           int pos=scanner.nextInt();
+                           if(pos<1 || pos>Array.size())
+                           {
+                               System.out.println("Invalid position");
+                           }
+                           else
+                           {
+                               UsingList.deleteAtPosition(Array,pos-1);
+                           }
+                           break;
+                    case 4:System.out.println("Enter the value");
+                           int value=scanner.nextInt();
+                           UsingList.deleteByData(Array,value);
+                           break;
+                    default:System.out.println("Invalid option");
+                }
+                break;
+        case 2:System.out.println("Using the node");
+               System.out.println("1.Frist element of List");
+               System.out.println("2.Last element");
+               System.out.println("3.Given Postion");
+               System.out.println("4.Given value");
+               int choice1=scanner.nextInt();
+               switch(choice1)
+               {
+                 case 1:System.out.println("1.Frist element of List");
+                         node.deleteatBegining(head);
+                         break;
+                 case 2:System.out.println("2.Last element of List");
+                         node.deleteatEnd(head);
+                         break;
+                 case 3:System.out.println("3.Given Postion");
+                        int pos=scanner.nextInt();
+                        node.delteatpostion(head, pos);
+                        break;
+                 case 4:System.out.println("4.Given value");
+                        int value=scanner.nextInt();
+                        node.deletebyValue(head, value);
+                        break;
+                 default:System.out.println("Invalid option");
+               }
+     }
+   }   
+}
+class UsingList
+{
+    public static LinkedList<Integer> Second1(int arr[])
     {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter the size of an array:");
-        int size = scanner.nextInt();
-        int arr[] = new int[size];
-        
-        // Taking input for the array
-        System.out.println("Enter the elements of the array:");
-        for (int i = 0; i < size; i++) {
-            arr[i] = scanner.nextInt();
-        }
-        
-        LinkedList<Integer> array = UsingList.createList(arr);
-        Node head = Node.createLinkedList(arr);
-        
-        System.out.println("Select the option:");
-        System.out.println("1. Using the Collection in Java");
-        System.out.println("2. Using the Node");
-        int n = scanner.nextInt();
-        
-        switch (n) {
-            case 1:
-                System.out.println("Using the collection in Java");
-                System.out.println("1. First element of List");
-                System.out.println("2. Last element");
-                System.out.println("3. Given Position");
-                System.out.println("4. Given Value");
-                int choice = scanner.nextInt();
-                
-                switch (choice) {
-                    case 1:
-                        System.out.println("First element of list is removed");
-                        UsingList.deleteFirst(array);
-                        break;
-                    case 2:
-                        System.out.println("Last element of list is removed");
-                        UsingList.deleteLast(array);
-                        break;
-                    case 3:
-                        System.out.println("Enter the position:");
-                        int pos = scanner.nextInt();
-                        UsingList.deleteAtPosition(array, pos - 1);
-                        break;
-                    case 4:
-                        System.out.println("Enter the value:");
-                        int value = scanner.nextInt();
-                        UsingList.deleteByData(array, value);
-                        break;
-                    default:
-                        System.out.println("Invalid option");
-                }
-                break;
-            
-            case 2:
-                System.out.println("Using the Node");
-                System.out.println("1. First element of List");
-                System.out.println("2. Last element");
-                System.out.println("3. Given Position");
-                System.out.println("4. Given Value");
-                int choice1 = scanner.nextInt();
-                
-                switch (choice1) {
-                    case 1:
-                        System.out.println("First element of List is removed");
-                        head = Node.deleteAtBeginning(head);
-                        break;
-                    case 2:
-                        System.out.println("Last element of List is removed");
-                        head = Node.deleteAtEnd(head);
-                        break;
-                    case 3:
-                        System.out.println("Enter the position:");
-                        int pos1 = scanner.nextInt();
-                        head = Node.deleteAtPosition(head, pos1);
-                        break;
-                    case 4:
-                        System.out.println("Enter the value:");
-                        int value1 = scanner.nextInt();
-                        head = Node.deleteByValue(head, value1);
-                        break;
-                    default:
-                        System.out.println("Invalid option");
-                }
-                break;
-            
-            default:
-                System.out.println("Invalid choice");
-        }
-        scanner.close();
+      LinkedList<Integer> Array=new LinkedList<>();
+      for(int i=0; i<arr.length; i++)
+      {
+      Array.add(arr[i]);
+      }
+      return Array;
     }
-}
-
-class UsingList 
-{
-    // Creates a LinkedList from an array
-    public static LinkedList<Integer> createList(int arr[]) {
-        LinkedList<Integer> list = new LinkedList<>();
-        for (int num : arr) {
-            list.add(num);
-        }
-        return list;
-    }
-    
-    // Deletes the first element from the LinkedList
-    public static void deleteFirst(LinkedList<Integer> list) {
-        if (!list.isEmpty()) {
-            list.removeFirst();
-        } else {
+    // delte the first element of the linked list
+    public static void deleteFirst(LinkedList<Integer> Array)
+    {
+        if(Array.isEmpty())
+        {
             System.out.println("List is empty");
         }
-    }
-    
-    // Deletes the last element from the LinkedList
-    public static void deleteLast(LinkedList<Integer> list) {
-        if (!list.isEmpty()) {
-            list.removeLast();
-        } else {
-            System.out.println("List is empty");
+        else
+        {
+            Array.removeFirst();
         }
     }
-    
-    // Deletes an element at a given position
-    public static void deleteAtPosition(LinkedList<Integer> list, int position) {
-        if (position < 0 || position >= list.size()) {
+    // delte the last element of the linked list
+    public static void deleteLast(LinkedList<Integer> Array)
+    {
+        if(Array.isEmpty())
+        {
+            System.out.println("List is empty");
+        }
+        else
+        {
+            Array.removeLast();
+        }
+    }
+    // delte the node at the given position of the list
+    public static void deleteAtPosition(LinkedList<Integer> Array, int position)
+    {
+        if(Array.isEmpty() || position < 0 || position >= Array.size())
+        {
             System.out.println("Invalid position");
-        } else {
-            list.remove(position);
+        }
+        else
+        {
+            Array.remove(position);
         }
     }
-    
-    // Deletes an element by its value
-    public static void deleteByData(LinkedList<Integer> list, int data) {
-        list.remove(Integer.valueOf(data));
+    // delte the node with given data from the list
+    public static void deleteByData(LinkedList<Integer> Array, int data)
+    {
+        if(Array.isEmpty())
+        {
+            System.out.println("List is empty");
+        }
+        else
+        {
+            Array.remove(Integer.valueOf(data));
+        }
     }
 }
-
-class Node 
+class node
 {
     int data;
-    Node next;
-    
-    Node(int data) {
-        this.data = data;
+    node next;
+
+    node(int d, node next)
+    {
+        this.data = d;
+        this.next = next;
+    }
+    node(int d)
+    {
+        this.data = d;
         this.next = null;
     }
-    
-    // Creates a linked list from an array
-    public static Node createLinkedList(int arr[]) {
-        if (arr.length == 0) return null;
-        Node head = new Node(arr[0]);
-        Node mover = head;
-        for (int i = 1; i < arr.length; i++) {
-            mover.next = new Node(arr[i]);
-            mover = mover.next;
+    public static node Frsit1(int arr[])
+    {
+       node head = new node(arr[0]);
+       node mover = head;
+       for(int i=1; i<arr.length; i++)
+       {
+          node temp= new node(arr[i]);
+          mover.next =temp;
+          mover = temp;
+       }
+       return head;
+    } 
+    // delete the node at the head of the list
+    static  node deleteatBegining(node head)
+    {
+       if (head == null)
+       {
+          return head;
+       }
+       node temp = head;
+       head = head.next;
+       return head;
+    }
+    // delte the node from the end oflis
+    static node deleteatEnd(node head)
+    {
+        if(head == null||head.next == null)
+        {
+            return head;
         }
-        return head;
-    }
-    
-    // Deletes the first node
-    public static Node deleteAtBeginning(Node head) {
-        return (head == null) ? null : head.next;
-    }
-    
-    // Deletes the last node
-    public static Node deleteAtEnd(Node head) {
-        if (head == null || head.next == null) return null;
-        Node temp = head;
-        while (temp.next.next != null) {
+        node temp = head;
+        while(temp.next.next!=null)
+        {
             temp = temp.next;
         }
         temp.next = null;
         return head;
     }
-    
-    // Deletes a node at a given position
-    public static Node deleteAtPosition(Node head, int position) {
-        if (head == null || position < 1) return head;
-        if (position == 1) return head.next;
-        
-        Node temp = head;
-        for (int i = 1; temp != null && i < position - 1; i++) {
-            temp = temp.next;
+    // delete a node at a given position
+    static node delteatpostion(node head, int position)
+    {
+        if(head==null)
+        {
+            return head;
         }
-        if (temp == null || temp.next == null) return head;
-        temp.next = temp.next.next;
+        if(position==1)
+        {
+            node temp = head;
+            head = head.next;
+            return head;
+        }
+        int count=0;
+        node temp = head;
+        node prev=null;
+        while(temp!=null)
+        {
+            count++;
+            if(count==position)
+            {
+                prev.next = prev.next.next;
+                break;
+            }
+            prev = temp;
+            temp = temp.next;
+
+        }
         return head;
     }
-    
-    // Deletes a node by value
-    public static Node deleteByValue(Node head, int value) {
-        if (head == null) return null;
-        if (head.data == value) return head.next;
-        
-        Node temp = head;
-        while (temp.next != null && temp.next.data != value) {
-            temp = temp.next;
+    // delete node the value at position
+    static node deletebyValue(node head, int value)
+    {
+        if(head==null)
+        {
+            return head;
         }
-        if (temp.next != null) {
-            temp.next = temp.next.next;
+        if(head.data==value)
+        {
+            node temp = head;
+            head = head.next;
+            return head;
+        }
+        node temp = head;
+        node prev=null;
+        while(temp!=null)
+        {
+            if(temp.data==value)
+            {
+                prev.next = prev.next.next;
+                break;
+            }
+            prev = temp;
+            temp = temp.next;
         }
         return head;
     }
