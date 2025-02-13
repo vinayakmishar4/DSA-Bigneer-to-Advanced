@@ -45,4 +45,37 @@ class  node
       temp.next=new_node;
       return head;
    }
+   // add data at the postion of LinkedList
+   static node Addatpostiom(node head,int postion,int ndata)
+   {
+      if(head==null)
+      {
+        if(postion==1)
+        {
+           return new node(ndata);
+        }
+        else
+        {
+           return null;
+        } 
+      }
+      if(postion==1)
+      {
+         node temp=new node(head,ndata)
+         return temp;
+      }
+      int count=0;
+      while(temp!=null)
+      {
+         count++;    
+      }
+      if(count==postion-1)
+      {
+         node x=new node(ndata,temp.next);
+         temp.next=x;
+      }
+      temp=temp.next;
+      return head;
+     
+   }
 }
