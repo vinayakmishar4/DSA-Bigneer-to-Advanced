@@ -80,6 +80,29 @@ class  node
       }
       temp=temp.next;
       return head;
-     
+   }
+   // insert node at value in linked list
+   static node InsertNode(node head,int value,int ndata)
+   {
+      if(head==null)
+      {
+         return null;
+      }
+      if(head.data==value)
+      {
+         return new node(ndata, head);
+      }
+      node temp=head;
+      while(temp.next!=null)
+      {
+         if(temp.next.data==value)
+         {
+            node x=new node(ndata,temp.next);
+            temp.next=x;
+            return head;
+         }
+         temp=temp.next;
+      }
+      return head;
    }
 }
