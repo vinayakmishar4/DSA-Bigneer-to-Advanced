@@ -1,7 +1,10 @@
 // WAP to add elemnts in linked list
 class AddElements
 {
-  
+  public static void main(String[] args)
+  {
+   
+  }
 }
 class UsingaList
 {
@@ -19,7 +22,7 @@ class  node
    }
    node(int d)
    {
-     this.data=data
+     this.data=d;
      this.next=null;
    }
    // add data at begining of linkedlist
@@ -61,9 +64,10 @@ class  node
       }
       if(postion==1)
       {
-         node temp=new node(head,ndata)
+         node temp=new node(ndata,head);
          return temp;
       }
+      node temp=head;
       int count=0;
       while(temp!=null)
       {
